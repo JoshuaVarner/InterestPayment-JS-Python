@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Bond Calculator</h1>
+
+<form>
+  Principal: <input type="number" id="principal"><br>
+  Interest rate: <input type="number" id="interestRate"><br>
+  Number of days: <input type="number" id="numDays"><br>
+</form> 
+
+<button onclick="calculateInterest()">Calculate Interest</button>
+
+<p id="result"></p>
+
+<script>
+function calculateInterest() {
+  // Get the user input values
+  var principal = document.getElementById("principal").value;
+  var interestRate = document.getElementById("interestRate").value / 100;
+  var numDays = document.getElementById("numDays").value;
+
+  // Calculate the interest payment
+  var interestPayment = (principal * interestRate) / (365 / numDays);
+
+  // Calculate the total interest earned
+  var totalInterest = interestPayment * numDays;
+
+  // Display the result
+  document.getElementById("result").innerHTML = "Total interest earned: $" + totalInterest.toFixed(2);
+}
+</script>
+
+</body>
+</html>
+
